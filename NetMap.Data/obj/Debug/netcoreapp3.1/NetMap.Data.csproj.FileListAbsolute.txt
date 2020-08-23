@@ -1,0 +1,12 @@
+D:\asp.net apps\NetMap\NetMap.Data\obj\Debug\netcoreapp3.1\NetMap.Data.csprojAssemblyReference.cache
+D:\asp.net apps\NetMap\NetMap.Data\obj\Debug\netcoreapp3.1\NetMap.Data.AssemblyInfoInputs.cache
+D:\asp.net apps\NetMap\NetMap.Data\obj\Debug\netcoreapp3.1\NetMap.Data.AssemblyInfo.cs
+D:\asp.net apps\NetMap\NetMap.Data\bin\Debug\netcoreapp3.1\NetMap.Data.deps.json
+D:\asp.net apps\NetMap\NetMap.Data\bin\Debug\netcoreapp3.1\NetMap.Data.dll
+D:\asp.net apps\NetMap\NetMap.Data\bin\Debug\netcoreapp3.1\NetMap.Data.pdb
+D:\asp.net apps\NetMap\NetMap.Data\obj\Debug\netcoreapp3.1\NetMap.Data.dll
+D:\asp.net apps\NetMap\NetMap.Data\obj\Debug\netcoreapp3.1\NetMap.Data.pdb
+D:\asp.net apps\NetMap\NetMap.Data\bin\Debug\netcoreapp3.1\NetMap.Data.runtimeconfig.json
+D:\asp.net apps\NetMap\NetMap.Data\bin\Debug\netcoreapp3.1\NetMap.Data.runtimeconfig.dev.json
+D:\asp.net apps\NetMap\NetMap.Data\obj\Debug\netcoreapp3.1\NetMap.Data.genruntimeconfig.cache
+D:\asp.net apps\NetMap\NetMap.Data\obj\Debug\netcoreapp3.1\NetMap.Data.csproj.CoreCompileInputs.cache
