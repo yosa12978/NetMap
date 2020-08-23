@@ -13,7 +13,6 @@ namespace NetMap.Data.Data
         public NetMapContext(DbContextOptions<NetMapContext> options, ILogger<NetMapContext> logger) : base(options)
         {
             _logger = logger;
-            _logger.LogInformation("DbContext is created");
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -23,7 +22,6 @@ namespace NetMap.Data.Data
         }
 
         public DbSet<Post> posts { get; set; }
-        public DbSet<Image> images { get; set; }
         public DbSet<User> users { get; set; }
         public DbSet<Category> categories { get; set; }
     }

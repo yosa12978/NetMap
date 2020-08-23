@@ -146,10 +146,12 @@ D:\asp.net apps\NetMap\NetMap.Test\bin\Debug\netcoreapp3.1\NetMap.Web.dll
 D:\asp.net apps\NetMap\NetMap.Test\bin\Debug\netcoreapp3.1\NetMap.Data.pdb
 D:\asp.net apps\NetMap\NetMap.Test\bin\Debug\netcoreapp3.1\NetMap.Web.pdb
 D:\asp.net apps\NetMap\NetMap.Test\obj\Debug\netcoreapp3.1\NetMap.Test.csprojAssemblyReference.cache
-D:\asp.net apps\NetMap\NetMap.Test\obj\Debug\netcoreapp3.1\NetMap.Test.csproj.CoreCompileInputs.cache
 D:\asp.net apps\NetMap\NetMap.Test\obj\Debug\netcoreapp3.1\NetMap.Test.AssemblyInfoInputs.cache
 D:\asp.net apps\NetMap\NetMap.Test\obj\Debug\netcoreapp3.1\NetMap.Test.AssemblyInfo.cs
 D:\asp.net apps\NetMap\NetMap.Test\obj\Debug\netcoreapp3.1\NetMap.Test.csproj.CopyComplete
 D:\asp.net apps\NetMap\NetMap.Test\obj\Debug\netcoreapp3.1\NetMap.Test.dll
 D:\asp.net apps\NetMap\NetMap.Test\obj\Debug\netcoreapp3.1\NetMap.Test.pdb
 D:\asp.net apps\NetMap\NetMap.Test\obj\Debug\netcoreapp3.1\NetMap.Test.genruntimeconfig.cache
+D:\asp.net apps\NetMap\NetMap.Test\bin\Debug\netcoreapp3.1\Castle.Core.dll
+D:\asp.net apps\NetMap\NetMap.Test\bin\Debug\netcoreapp3.1\Moq.dll
+D:\asp.net apps\NetMap\NetMap.Test\obj\Debug\netcoreapp3.1\NetMap.Test.csproj.CoreCompileInputs.cache

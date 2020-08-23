@@ -25,6 +25,5 @@ namespace NetMap.Data.Models
         [Required]
         public DateTime regDate { get; set; } = DateTime.Now;
         public List<Post> posts { get; set; }
-        public List<Image> images { get; set; }
     }
 }
