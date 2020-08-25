@@ -6,7 +6,7 @@ namespace NetMap.Data.Models
 {
     public class PostViewModel
     {
-        public IEnumerable<Post> psots { get; set; }
+        public IEnumerable<Post> posts { get; set; }
         public PageViewModel PageViewModel { get; set; }
     }
 }

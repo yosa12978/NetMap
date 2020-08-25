@@ -10,5 +10,6 @@ namespace NetMap.Data.Repositories.Interfaces
         PostViewModel GetPosts(int page);
         PostViewModel GetCategoryPosts(long categoryid, int page);
         void CreatePost(string title, string uri, string? preview, long categoryid, string username);
+        List<Post> GetLastPosts(int size);
     }
 }
