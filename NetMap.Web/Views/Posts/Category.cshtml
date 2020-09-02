@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewData["Title"] = ViewBag.Category.title;
+}
+
+<h1 class="mt-2 md-2"><i class="fa fa-bars mr-2" aria-hidden="true"></i>Category: @ViewBag.Category.title</h1>
+<br>
+
+@if (ViewBag.posts != null)
+{
+    @foreach (var i in ViewBag.posts.posts)
+    {
+        <div class="card flex-row flex-wrap">
+            @if (i.preview != null)
+            {
+
+                <div class="" card-header border-0"">
+                    <img src="@i.preview" style="height: auto; width: 100%; max-width: 25rem" alt="">
+                </div>
+            }
+            <div class="card-body">
+
+                <h5><a href="@i.redirect_url">@i.title</a></h5>
+
+            </div>
+            <div class="card-footer w-100" style="word-wrap: break-word;">
+                <a href="/Account?name=@i.author.username" class="text-dark mr-2"><strong><i class="fa fa-user-circle mr-2" aria-hidden="true"></i>@i.author.username</strong></a>
+                <small><strong>Date:</strong> @i.pubDate |<strong> Views:</strong> @i.views | <strong> Host:</strong> @i.host | <strong>Category:</strong> @i.category.title</small>
+            </div>
+        </div>
+        <br>
+    }
+    @if (ViewBag.posts.PageViewModel.HasPreviousPage)
+    {
+        <a asp-action="Category" asp-route-page="@(ViewBag.posts.PageViewModel.PageNumber - 1)" class="btn btn-outline-primary">Previous</a>
+    }
+    @if (ViewBag.posts.PageViewModel.HasNextPage)
+    {
+        <a asp-action="Category" asp-route-page="@(ViewBag.posts.PageViewModel.PageNumber + 1)" class="btn btn-outline-primary">Next</a>
+    }
+}

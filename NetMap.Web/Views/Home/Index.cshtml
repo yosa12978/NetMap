@@ -1,8 +1,26 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home";
 }
+<br>
+@foreach (var i in ViewBag.posts)
+{
+    <div class="card flex-row flex-wrap">
+        @if (i.preview != null)
+        {
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+            <div class="" card-header border-0"">
+                <img src="@i.preview" style="height: auto; width: 100%; max-width: 25rem" alt="">
+            </div>
+        }
+        <div class="card-body">
+
+            <h5><a href="@i.redirect_url">@i.title</a></h5>
+
+        </div>
+        <div class="card-footer w-100" style="word-wrap: break-word;">
+            <a href="/Account?name=@i.author.username" class="text-dark mr-2"><strong><i class="fa fa-user-circle mr-2" aria-hidden="true"></i>@i.author.username</strong></a>
+            <small><strong>Date:</strong> @i.pubDate |<strong> Views:</strong> @i.views | <strong> Host:</strong> @i.host | <strong>Category:</strong> @i.category.title</small>
+        </div>
+    </div>
+    <br>
+}

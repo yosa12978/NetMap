@@ -3,27 +3,66 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - NetMap.Web</title>
+    <title>@ViewData["Title"] - NetMap</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <style>
+        h1, h2, h3, h4, h5 {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+    <header style="background-color: #201324;">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm ">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">NetMap.Web</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/1.PNG" style="width: auto; height: 50px;"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <span class="btn btn-outline-primary">
+                        <i class="fa fa-bars m-1" style="font-size: 22px" aria-hidden="true"></i>
+                    </span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link btn btn-outline-primary ml-2 mt-1" asp-area="" asp-controller="Home" asp-action="Index"><i class="fa fa-home mr-2" aria-hidden="true"></i>Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link btn btn-outline-primary ml-2 mt-1" asp-area="" asp-controller="Posts" asp-action="Index"><i class="fa fa-bolt mr-2" aria-hidden="true"></i>Recent Posts</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-outline-primary ml-2 mt-1" asp-area="" asp-controller="Posts" asp-action="Search"><i class="fa fa-search mr-2" aria-hidden="true"></i>Search</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-outline-primary ml-2 mt-1" asp-area="" asp-controller="Posts" asp-action="Categories"><i class="fa fa-bars mr-2" aria-hidden="true"></i>Categories</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-outline-primary ml-2 mt-1" asp-area="" asp-controller="Posts" asp-action="Create"><i class="fa fa-plus mr-2" aria-hidden="true"></i>Create</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-outline-primary ml-2 mt-1" href="/Api/Docs"><i class="fa fa-code mr-2" aria-hidden="true"></i>API</a>
+                        </li>
+                        @if (!User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link btn btn-primary ml-2 mt-1" asp-area="" asp-controller="Account" asp-action="Login"><i class="fa fa-sign-in mr-2" aria-hidden="true"></i>Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link btn btn-primary ml-2 mt-1" asp-area="" asp-controller="Account" asp-action="Signup"><i class="fa fa-user-plus mr-2" aria-hidden="true"></i>Signup</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link btn btn-primary ml-2 mt-1" asp-area="" asp-controller="Account" asp-action="Index"><i class="fa fa-user-circle mr-2" aria-hidden="true"></i>@User.Identity.Name</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link btn btn-primary ml-2 mt-1" asp-area="" asp-controller="Account" asp-action="Logout"><i class="fa fa-sign-out mr-2" aria-hidden="true"></i>Logout</a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>
@@ -37,7 +76,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2020 - NetMap.Web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2020 - NetMap - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

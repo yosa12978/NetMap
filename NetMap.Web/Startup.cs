@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -11,6 +13,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using NetMap.Data.Data;
+using NetMap.Data.Repositories.Interfaces;
+using NetMap.Data.Repositories.Mocks;
 
 namespace NetMap.Web
 {
@@ -28,6 +32,17 @@ namespace NetMap.Web
             services.AddControllersWithViews();
             services.AddControllers()
                 .AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+
+            services.AddTransient<IUserRepository, UserRepository>();
+            services.AddTransient<ICategoryRepository, CategoryRepository>();
+            services.AddTransient<IPostRepository, PostRepository>();
+            services.AddTransient<ITokenRepository, TokenRepository>();
+            services.AddTransient<IEmailRepository, EmailRepository>();
+
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options => { options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Account/Login"); });
+
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             // Adding external db context
             services.AddDbContext<NetMapContext>();

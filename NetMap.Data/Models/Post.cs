@@ -12,7 +12,13 @@ namespace NetMap.Data.Models
         public string title { get; set; }
         [Required]
         public Uri uri { get; set; }
+        [Required]
+        public string redirect_url { get; set; }
         public string? preview { get; set; }
+        [Required]
+        public long views { get; set; } = 0;
+        [Required]
+        public string host { get; set; }
         [Required]
         public DateTime pubDate { get; set; }
         [Required]

@@ -1,0 +1,4 @@
+2020-09-01T21:40:26.7424566+03:00  [INF] Now listening on: "https://0.0.0.0:5001" (d826f4b8)
+2020-09-01T21:40:26.7466495+03:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-09-01T21:40:26.7477286+03:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-09-01T21:40:26.7486913+03:00  [INF] Content root path: "D:\asp.net apps\NetMap\NetMap.Web" (b5d60022)

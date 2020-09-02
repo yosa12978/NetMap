@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - NetMap</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+</head>
+<body style="background-color: #201324;">
+    <style>
+        h1, h2, h3, h4 {
+            font-family: 'Roboto', sans-serif;
+        }
+        .center-box {
+            width: 25rem;
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -55%);
+        }
+        hr {
+            border: 1px solid white;
+        }
+    </style>
+
+    <center>
+        <div class="center-box text-white">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/1.PNG" style="width: 75%; height: auto;"></a><hr>
+            <h1>Login</h1>
+
+            @if (ViewBag.Error != null)
+            {
+                <p style="color:red;">@ViewBag.Error</p>
+            }
+            <form method="post" class="justify-content-center">
+                <input name="email" placeholder="email" type="email" class="form-control" /><br>
+                <input name="password" placeholder="password" type="password" class="form-control" /><br>
+                <button type="submit" class="btn btn-outline-primary" style="width: 100%">Login</button>
+            </form>
+            <br>
+            <a href="/Account/Signup/">Don't have an account?</a>
+        </div>
+       
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+</html>

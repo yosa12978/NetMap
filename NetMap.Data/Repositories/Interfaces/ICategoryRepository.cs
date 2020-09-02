@@ -9,5 +9,6 @@ namespace NetMap.Data.Repositories.Interfaces
     {
         Category GetCategory(long id);
         List<Category> GetCategories();
+        bool isCategoryExist(long id);
     }
 }

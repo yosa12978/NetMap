@@ -48,11 +48,19 @@ namespace NetMap.Data.Migrations
                     b.Property<long>("categoryid")
                         .HasColumnType("bigint");
 
+                    b.Property<string>("host")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("preview")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("pubDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("redirect_url")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("title")
                         .IsRequired()
@@ -61,6 +69,9 @@ namespace NetMap.Data.Migrations
                     b.Property<string>("uri")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("views")
+                        .HasColumnType("bigint");
 
                     b.HasKey("id");
 
@@ -79,6 +90,10 @@ namespace NetMap.Data.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("emailToken")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="mt-2 md-2"><i class="fa fa-plus mr-2" aria-hidden="true"></i>Create</h1>
+
+<div style="width: 100%; max-width:30rem">
+    <form method="post" class="justify-content-center">
+        <small>Post title</small>
+        <input name="title" placeholder="Title" type="text" class="form-control" maxlength="65" required /><br>
+        <small>Post URL Address</small>
+        <input name="url" placeholder="URL" type="url" class="form-control" required /><br>
+        <small>Preview image(url) *Optional</small>
+        <input name="preview" placeholder="Preview image(url)" type="url" class="form-control" /><br>
+        <small>Post Category</small>
+        <select name="category" class="form-control" required>
+            @foreach (var i in ViewBag.Categories)
+            {
+                <option value="@i.id">@i.title</option>
+            }
+        </select><br>
+
+        <button type="submit" class="btn btn-outline-primary" style="width: 100%">Create</button>
+    </form>
+</div>

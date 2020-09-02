@@ -28,5 +28,12 @@ namespace NetMap.Data.Repositories.Mocks
             return _db.categories
                 .FirstOrDefault(m => m.id == id);
         }
+
+        public bool isCategoryExist(long id)
+        {
+            return _db.categories
+                .Any(m => m.id == id);
+        }
+
     }
 }

@@ -21,6 +21,8 @@ namespace NetMap.Data.Models
         [Required]
         public string token { get; set; }
         [Required]
+        public string emailToken { get; set; }
+        [Required]
         public string role { get; set; } = Role.USER;
         [Required]
         public DateTime regDate { get; set; } = DateTime.Now;

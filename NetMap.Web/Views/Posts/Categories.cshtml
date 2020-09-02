@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewData["Title"] = "Categories";
+}
+
+<h1><i class="fa fa-bars mr-2" aria-hidden="true"></i>Categories</h1>
+
+<br>
+@foreach (var i in ViewBag.Categories)
+{
+    <a class="mt-2 btn btn-outline-primary" href="/posts/category/@i.id" style="max-width: 25rem; width: 100%;">@i.title</a><br>
+}

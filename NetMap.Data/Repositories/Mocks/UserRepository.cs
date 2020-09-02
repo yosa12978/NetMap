@@ -21,7 +21,7 @@ namespace NetMap.Data.Repositories.Mocks
 
         public ClaimsPrincipal Authenticate(string email, string password)
         {
-            User user = _db.users.FirstOrDefault(m => m.email == email && m.password == password);
+            User user = _db.users.FirstOrDefault(m => m.email == email && m.password == ComputeHash(password) && m.isValidated == true);
             if (user == null)
                 return null;
             List<Claim> claims = new List<Claim> 
@@ -45,14 +45,15 @@ namespace NetMap.Data.Repositories.Mocks
             return builder.ToString();
         }
 
-        public void CreateUser(string username, string email, string password)
+        public void CreateUser(string username, string email, string password, string emailToken)
         {
             User user = new User
             {
                 username = username,
                 password = ComputeHash(password),
                 email = email,
-                token = ComputeHash(username+DateTime.Now.ToString())
+                token = ComputeHash(username+DateTime.Now.ToString()),
+                emailToken = emailToken
             };
             _db.users.Add(user);
             _db.SaveChanges();
@@ -86,6 +87,20 @@ namespace NetMap.Data.Repositories.Mocks
         {
             return _db.users
                 .Any(m => m.email == email && m.password == ComputeHash(password));
+        }
+
+        public void SetAccountValid(string emailToken)
+        {
+            User user = _db.users.FirstOrDefault(m => m.emailToken == emailToken);
+            user.isValidated = true;
+            user.isSubscribed = true;
+            _db.SaveChanges();
+        }
+
+        public bool isEmailTokenExist(string emailToken)
+        {
+            return _db.users
+                .Any(m => m.emailToken == emailToken);
         }
     }
 }

@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewData["Title"] = "API";
+}
+
+<h1 class="mt-2 md-2"><i class="fa fa-code mr-2" aria-hidden="true"></i>API</h1>
+<br>
+<p>
+    @try
+    {
+        <span>Your API token - @ViewBag.token.token</span>
+    }
+    catch
+    {
+        <a class="btn btn-primary mt-1" style="width: 100%; max-width: 25rem;" asp-area="" asp-controller="Account" asp-action="Login"><i class="fa fa-sign-in mr-2" aria-hidden="true"></i>Login to get a token</a>
+    }
+</p>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Route</th>
+            <th scope="col">Method</th>
+            <th scope="col">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>/api/v1/posts</td>
+            <td>GET</td>
+            <td>returns recent posts</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>/api/v1/posts?q={query here}</td>
+            <td>GET</td>
+            <td>search posts</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>/api/v1/posts</td>
+            <td>POST</td>
+            <td>Create post.<br>Params<br>title(post title) - address(post url address) - preview(post image url address) - category(category id)</td>
+        </tr>
+        <tr>
+            <th scope="row">4</th>
+            <td>/api/v1/Categories</td>
+            <td>GET</td>
+            <td>returns all categories</td>
+        </tr>
+        <tr>
+            <th scope="row">5</th>
+            <td>/api/v1/Categories/{id}</td>
+            <td>GET</td>
+            <td>returns category posts</td>
+        </tr>
+    </tbody>
+</table>
